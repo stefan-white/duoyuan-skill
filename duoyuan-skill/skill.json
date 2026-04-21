@@ -1,0 +1,133 @@
+{
+  "name": "duoyuan-skill",
+  "version": "0.1.0",
+  "description": "郑州多元智能装备股份有限公司信息查询与智能制造解决方案展示",
+  "author": "Stefan White",
+  "license": "MIT",
+  "homepage": "https://github.com/stefan-white/duoyuan-skill",
+  "keywords": [
+    "多元智能", "duoyuan", "汽车生产线", "焊装线", "总装线",
+    "涂装线", "输送设备", "AGV", "智能制造", "MALS", "EPC"
+  ],
+  "phase": 1,
+  "language": "zh-CN",
+  "mcp": {
+    "url": "",
+    "protocol": "streamable-http",
+    "status": "not_deployed",
+    "note": "Phase 2 上线后填入实际端点（计划：腾讯云 CloudBase）"
+  },
+  "tools": [
+    {
+      "name": "get_company_info",
+      "description": "返回公司名称、简介、成立时间、地址、联系方式",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "get_business_overview",
+      "description": "返回三大业务板块（多元智能/多元车身/多元注塑）的定位和核心能力",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "division": {
+            "type": "string",
+            "enum": ["intelligent", "body", "injection", "all"],
+            "default": "all",
+            "description": "intelligent=多元智能, body=多元车身, injection=多元注塑"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_products",
+      "description": "返回多元智能板块的产品大类和详情（车身、注塑板块请用 get_business_overview）",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string",
+            "enum": [
+              "welding", "assembly", "painting", "conveyor",
+              "logistics", "robot", "other", "all"
+            ],
+            "default": "all",
+            "description": "welding=焊装, assembly=总装, painting=涂装, conveyor=输送, logistics=智能物流/MALS, robot=机器人, other=其他装备"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_solutions",
+      "description": "返回各类解决方案详情",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["smart_line", "industry_4", "epc", "digital_twin", "all"],
+            "default": "all",
+            "description": "smart_line=智能产线, industry_4=工业4.0, epc=交钥匙工程, digital_twin=数字孪生"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_project_cases",
+      "description": "返回项目案例列表，可按行业或地区筛选",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "industry": {
+            "type": "string",
+            "enum": ["passenger", "commercial", "new_energy", "export", "all"],
+            "default": "all",
+            "description": "passenger=乘用车, commercial=商用车, new_energy=新能源, export=出口海外"
+          },
+          "limit": {
+            "type": "number",
+            "default": 10
+          }
+        }
+      }
+    },
+    {
+      "name": "get_certifications",
+      "description": "返回公司获得的资质、荣誉和专利信息",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "get_history",
+      "description": "返回公司发展里程碑时间线",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "get_contact",
+      "description": "返回联系电话、邮箱、地址、工作时间、社交媒体",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  ],
+  "tools_deferred": [
+    {
+      "name": "get_news",
+      "description": "返回公司最新新闻和项目动态（Phase 2 MCP Server 上线后启用）",
+      "reason": "Phase 1 纯静态模式无法提供实时新闻，强行启用会返回过时内容"
+    },
+    {
+      "name": "submit_inquiry",
+      "description": "询盘提交（Phase 3 规划）",
+      "reason": "需与公司 CRM 对接流程后才能启用"
+    }
+  ]
+}
