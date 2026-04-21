@@ -1,5 +1,9 @@
 .DS_Store
 node_modules/
+
+# 内部开发文档（含研究底稿、风险评估、未来路线图）不公开
+docs/
+
 .env
 .env.local
 .claude/settings.local.json

@@ -30,11 +30,10 @@ dy-skills/
 │   ├── CHANGELOG.md       # 版本记录
 │   └── UPGRADE.md         # 更新机制说明
 │
-├── mcp-server/            # Phase 2：MCP Server（预留目录）
-│
-└── docs/                  # 开发文档
-    └── duoyuan-skill-dev-doc.md
+└── mcp-server/            # Phase 2：MCP Server（预留目录）
 ```
+
+> 内部开发文档（研究底稿、风险评估、未来路线图）不随仓库发布，由维护者本地保管。
 
 ---
 
@@ -70,8 +69,6 @@ ln -s ~/.claude/skills/duoyuan-skill-src/duoyuan-skill ~/.claude/skills/duoyuan-
 | Phase 3 | 询盘提交 + 微信生态集成 + Gitee/ClawHub 镜像 | ⏳ 待启动 |
 | Phase 4 | 技术参数库 + 智能选型 + 3D/视频内容 | ⏳ 长期 |
 
-详细路线图见 [`docs/duoyuan-skill-dev-doc.md`](./docs/duoyuan-skill-dev-doc.md) 第五章。
-
 ---
 
 ## 开发指引
@@ -97,7 +94,7 @@ ln -s ~/.claude/skills/duoyuan-skill-src/duoyuan-skill ~/.claude/skills/duoyuan-
 
 ### Phase 2 MCP Server 开发
 
-见 [`mcp-server/README.md`](./mcp-server/README.md) 与开发文档 §4。
+见 [`mcp-server/README.md`](./mcp-server/README.md)。
 
 ---
 
@@ -109,7 +106,6 @@ ln -s ~/.claude/skills/duoyuan-skill-src/duoyuan-skill ~/.claude/skills/duoyuan-
 | [`duoyuan-skill/SKILL.md`](./duoyuan-skill/SKILL.md) | Agent 运行时指令 |
 | [`duoyuan-skill/CHANGELOG.md`](./duoyuan-skill/CHANGELOG.md) | 版本变更记录 |
 | [`duoyuan-skill/UPGRADE.md`](./duoyuan-skill/UPGRADE.md) | 更新机制与发布流程 |
-| [`docs/duoyuan-skill-dev-doc.md`](./docs/duoyuan-skill-dev-doc.md) | 完整开发方案（含研究、架构、路线图） |
 
 ---
 
